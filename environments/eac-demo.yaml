@@ -11,8 +11,8 @@ inputs:
 # blueprint outputs define which data that was generated during environment provisioning will be returned to the user, API or CI.
 outputs: 
   images_bucket_arn:
-    value: '{{ .inputs.images_bucket.outputs.bucket_arn }}'
-    
+    value: '{{ .grains.images_bucket.outputs.bucket_arn }}'
+
 grains:
   eac-demo-app:
     kind: terraform
@@ -41,7 +41,7 @@ grains:
     spec:
       source:
         store: eac-demo
-        path: blueprints/simple_s3.yaml
+        path: blueprints/simple-s3.yaml
       inputs: 
         - agent: '{{ .inputs.agent }}'
         - bucket_name: 'eac-demo-images'
