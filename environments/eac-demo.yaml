@@ -33,4 +33,23 @@ grains:
       commands: []
       version: 1.5.5
 
+  images_bucket:
+    kind: blueprint
+    depends-on: eac-demo-app
+    spec:
+      source:
+        store: eac-demo
+        path: blueprints/simple-s3.yaml
+      inputs: 
+        - agent: eac-demo
+        - bucket_name: 'eac-demo-images'
+      # The environment variables declared in this section will be available during the grain deployment as well as the grain destroy phase
+      # env-vars:
+      # - VAR_NAME: var value
+      env-vars: []
+      outputs: 
+        - bucket_arn
+      # Helm commands to run before installing the chart
+      commands: []
+      version: 1.5.5
 
