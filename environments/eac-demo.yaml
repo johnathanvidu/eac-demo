@@ -38,3 +38,18 @@ grains:
       - cloudfront_url
       - content_bucket_arn
       version: 1.5.5
+  images_bucket:
+    kind: blueprint
+    depends-on: eac-demo-app
+    spec:
+      source:
+        store: eac-demo
+        path: blueprints/simple-s3.yaml
+      inputs: 
+        - agent: 'eac-demo'
+        - bucket_name: 'eac-demo-images'
+      env-vars: []
+      outputs: 
+        - bucket_arn
+      version: 1.5.5
+
