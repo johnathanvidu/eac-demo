@@ -43,7 +43,7 @@ grains:
         store: eac-demo
         path: blueprints/simple-s3.yaml
       inputs: 
-        - agent: '{{ .inputs.agent }}'
+        - agent: eac-demo
         - bucket_name: 'eac-demo-images'
       # The environment variables declared in this section will be available during the grain deployment as well as the grain destroy phase
       # env-vars:
