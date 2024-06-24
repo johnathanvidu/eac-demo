@@ -110,9 +110,9 @@ resource "aws_secretsmanager_secret" "eac-demo-secret" {
 }
 
 output "cloudfront_url" {
-    value = "aws_cloudfront_distribution.s3_distribution.domain_name"
+    value = aws_cloudfront_distribution.s3_distribution.domain_name
 }
 
 output "content_bucket_arn" {
-    value = "aws_s3_bucket.eac-demo-s3-bucket.arn"
+    value = aws_s3_bucket.eac-demo-s3-bucket.arn
 }

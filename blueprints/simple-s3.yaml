@@ -12,7 +12,7 @@ outputs:
 
 grains:
   content-bucket:
-    kind: terraform
+    kind: opentofu
     spec:
       source:
         store: eac-demo
