@@ -108,3 +108,11 @@ resource "aws_secretsmanager_secret" "eac-demo-secret" {
   recovery_window_in_days = 0
   kms_key_id              = aws_kms_key.eac-demo-kms.arn
 }
+
+output "cloudfront_url" {
+    value = "aws_cloudfront_distribution.s3_distribution.domain_name"
+}
+
+output "content_bucket_arn" {
+    value = "aws_s3_bucket.eac-demo-s3-bucket.arn"
+}
