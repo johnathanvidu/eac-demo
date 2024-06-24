@@ -8,9 +8,7 @@ environment:
 inputs:
   agent:
     default: eac-demo
-# blueprint outputs define which data that was generated during environment provisioning will be returned to the user, API or CI.
 
-outputs: {}
 grains:
   eac-demo-app:
     kind: terraform
