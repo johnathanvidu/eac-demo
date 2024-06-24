@@ -16,7 +16,7 @@ outputs:
   eac-demo-app_content_bucket_arn:
     value: '{{ .grains.eac-demo-app.outputs.content_bucket_arn }}'
   images_bucket_arn:
-    value: '{{ .grains.images_bucket.outputs.content_bucket_arn }}'
+    value: '{{ .grains.images_bucket.outputs.bucket_arn }}'
 grains:
   eac-demo-app:
     kind: terraform
