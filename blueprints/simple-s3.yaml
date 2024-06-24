@@ -6,6 +6,10 @@ inputs:
   bucket_name:
     type: string
 
+outputs:
+  bucket_arn:
+    value: '{{ .grains.content-bucket.outputs.s3_bucket_arn }}'
+
 grains:
   content-bucket:
     kind: terraform
@@ -17,3 +21,5 @@ grains:
         name: '{{ .inputs.agent }}'
       inputs: 
         - name: '{{ .inputs.bucket_name }}'
+      outputs:
+        - s3_bucket_arn
