@@ -1,0 +1,19 @@
+spec_version: 2
+
+inputs:
+  agent:
+    type: agent
+  bucket_name:
+    type: string
+
+grains:
+  content-bucket:
+    kind: terraform
+    spec:
+      source:
+        store: eac-demo
+        path: terraform/simple-s3
+      agent:
+        name: '{{ .inputs.agent }}'
+      inputs: 
+        - name: '{{ .inputs.bucket_name }}'
